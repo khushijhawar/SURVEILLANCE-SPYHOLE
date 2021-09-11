@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+  <title>SURVEILLANCE SPYHOLE</title>
+  <style>
+    body {
+      background-color: #ECFCFF;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #3E64FF;
+      font-size: 300%;
+      margin: 0 auto;
+      padding: 5%;
+      font-family: 'Audiowide', cursive;
+    }
+
+    h2 {
+      color: #3E64FF;
+    }
+
+    hr {
+      border-color: #3E64FF;
+      border-style: solid;
+      border-width: 2px;
+      margin: 0;
+    }
+
+    .top {
+      background-color: #B2FCFF;
+      font-weight: bold;
+    }
+
+    .middle {
+      margin: 5% auto;
+      width: 50%;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top">
+    <h1>
+      SURVEILLANCE SPYHOLE <BR>
+      MAN - WOMAN CLASSIFIER
+    </h1>
+  </div>
+  <hr>
+  <div class="middle">
+    <h2> Upload the image to predict!</h2>
+    <form action="/" method="post" enctype="multipart/form-data">
+      <br>
+      <input type="file" name="imagefile">
+      <br>
+      <p><input type="submit" value="Predict image"></p>
+    </form>
+    <img src="{{ url_for('upload', filename=imagefile) }}" style="width: 200px">
+    <p>
+    <h2>
+      <b> {{ prediction_text }}</b>
+    </h2>
+    </p>
+
+  </div>
+</body>
+</html>
